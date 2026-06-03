@@ -5,6 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MezaForge — Technology Studio</title>
   <meta name="description" content="MezaForge is a technology studio engineering automation systems, AI-powered tools, DevOps infrastructure, and digital products built to last.">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-WRH42LPYRB"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-WRH42LPYRB');
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@400;500;600;700&family=Outfit:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -811,23 +820,24 @@
       </div>
 
       <form class="form sr d2" id="contact-form" novalidate>
+        <input type="hidden" name="access_key" value="204dc509-0d37-443e-aed4-dfe1f79c8f19">
         <div class="row">
           <div class="fg">
             <label class="fl" for="f-name">Name</label>
-            <input type="text" id="f-name" class="fi" placeholder="Your name" required>
+            <input type="text" id="f-name" name="name" class="fi" placeholder="Your name" required>
           </div>
           <div class="fg">
             <label class="fl" for="f-email">Email</label>
-            <input type="email" id="f-email" class="fi" placeholder="you@example.com" required>
+            <input type="email" id="f-email" name="email" class="fi" placeholder="you@example.com" required>
           </div>
         </div>
         <div class="fg">
           <label class="fl" for="f-subj">Subject</label>
-          <input type="text" id="f-subj" class="fi" placeholder="What's this about?">
+          <input type="text" id="f-subj" name="subject" class="fi" placeholder="What's this about?">
         </div>
         <div class="fg">
           <label class="fl" for="f-msg">Message</label>
-          <textarea id="f-msg" class="ft" placeholder="Tell me what you're building..." required></textarea>
+          <textarea id="f-msg" name="message" class="ft" placeholder="Tell me what you're building..." required></textarea>
         </div>
         <button type="submit" class="btn btn-fill" id="send-btn" style="max-width:220px;">
           <i class="fas fa-paper-plane"></i>Send Message
@@ -1035,16 +1045,43 @@
   form.addEventListener('submit', e => {
     e.preventDefault();
     const orig = sendBtn.innerHTML;
-    sendBtn.innerHTML = '<i class="fas fa-check"></i>Sent!';
-    sendBtn.style.background = '#00a370';
+    sendBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i>Sending…';
     sendBtn.disabled = true;
 
-    setTimeout(() => {
-      sendBtn.innerHTML  = orig;
-      sendBtn.style.background = '';
-      sendBtn.disabled   = false;
-      form.reset();
-    }, 3200);
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      body: new FormData(form)
+    })
+    .then(res => res.json())
+    .then(data => {
+      if (data.success) {
+        sendBtn.innerHTML = '<i class="fas fa-check"></i>Sent!';
+        sendBtn.style.background = '#00a370';
+        form.reset();
+        setTimeout(() => {
+          sendBtn.innerHTML = orig;
+          sendBtn.style.background = '';
+          sendBtn.disabled = false;
+        }, 3200);
+      } else {
+        sendBtn.innerHTML = '<i class="fas fa-exclamation-circle"></i>Try Again';
+        sendBtn.style.background = '#c0392b';
+        sendBtn.disabled = false;
+        setTimeout(() => {
+          sendBtn.innerHTML = orig;
+          sendBtn.style.background = '';
+        }, 3200);
+      }
+    })
+    .catch(() => {
+      sendBtn.innerHTML = '<i class="fas fa-exclamation-circle"></i>Try Again';
+      sendBtn.style.background = '#c0392b';
+      sendBtn.disabled = false;
+      setTimeout(() => {
+        sendBtn.innerHTML = orig;
+        sendBtn.style.background = '';
+      }, 3200);
+    });
   });
 
 })();
