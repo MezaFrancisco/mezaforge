@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 210 48" fill="none">
+  <defs>
+    <style>@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;700&amp;display=swap');</style>
+  </defs>
+
+  <!-- Code-tag wordmark: <MEZA/FORGE> — software-first brand statement -->
+  <text y="33" font-family="Rajdhani,'Arial Narrow',Arial,sans-serif" font-size="28" font-weight="700">
+    <tspan x="10" fill="#00d4ff" letter-spacing="0">&lt;</tspan>
+    <tspan fill="#eaeaef" letter-spacing="3">MEZA</tspan>
+    <tspan fill="rgba(234,234,239,0.22)" font-weight="300" letter-spacing="0">/</tspan>
+    <tspan fill="#eaeaef" letter-spacing="3">FORGE</tspan>
+    <tspan fill="#00d4ff" letter-spacing="0">&gt;</tspan>
+  </text>
+</svg>

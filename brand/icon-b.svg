@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60">
+  <rect width="60" height="60" fill="#0a0a0c" rx="8"/>
+  <defs>
+    <style>@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&amp;display=swap');</style>
+  </defs>
+  <!-- </> centered -->
+  <text x="5" y="40"
+    font-family="'JetBrains Mono','Courier New',monospace"
+    font-weight="500" font-size="27" fill="#00d4ff">&lt;/&gt;</text>
+</svg>

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60">
+  <rect width="60" height="60" fill="#0a0a0c" rx="8"/>
+  <!-- Double chevron scaled to fill square -->
+  <g transform="translate(10,9)">
+    <polyline points="2,38 20,12 38,38"
+      stroke="#eaeaef" stroke-width="6.5" fill="none"
+      stroke-linecap="square" stroke-linejoin="miter"/>
+    <polyline points="7,30 20,6 33,30"
+      stroke="#00d4ff" stroke-width="4.5" fill="none"
+      stroke-linecap="square" stroke-linejoin="miter"/>
+  </g>
+</svg>

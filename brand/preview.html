@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MezaForge Logo Options</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: #0a0a0c; color: #eaeaef; font-family: sans-serif; padding: 48px; }
+    h1 { font-size: 11px; letter-spacing: 4px; color: #585868; text-transform: uppercase; margin-bottom: 48px; }
+    .featured { background: #111116; border: 1px solid rgba(0,212,255,0.25); border-radius: 8px; padding: 40px 36px; margin-bottom: 32px; }
+    .featured h2 { font-size: 10px; letter-spacing: 3px; color: #00d4ff; text-transform: uppercase; margin-bottom: 28px; }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .card { background: #111116; border: 1px solid rgba(255,255,255,0.07); border-radius: 8px; padding: 32px 28px; }
+    .card h2 { font-size: 10px; letter-spacing: 3px; color: #585868; text-transform: uppercase; margin-bottom: 24px; }
+    img { display: block; }
+    hr { border: none; border-top: 1px solid rgba(255,255,255,0.06); margin: 24px 0; }
+    .on-light { background: #fff; border-radius: 6px; padding: 20px 28px; display: inline-flex; align-items: center; }
+    .label { font-size: 10px; color: #585868; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px; }
+    .row { display: flex; align-items: center; gap: 32px; flex-wrap: wrap; }
+  </style>
+</head>
+<body>
+  <h1>MezaForge — Logo Options</h1>
+
+  <!-- HYBRID: featured -->
+  <div class="featured">
+    <h2>Hybrid — Chevron Mark + Editorial Stack ★</h2>
+    <div class="row">
+      <div>
+        <p class="label">dark</p>
+        <img src="logo-hybrid.svg" height="62" alt="Hybrid dark">
+      </div>
+      <div>
+        <p class="label">light (Stripe)</p>
+        <div class="on-light">
+          <img src="logo-hybrid-light.svg" height="62" alt="Hybrid light">
+        </div>
+      </div>
+      <div>
+        <p class="label">icon</p>
+        <img src="icon-a.svg" height="60" alt="Icon">
+      </div>
+    </div>
+  </div>
+
+  <!-- Previous options for reference -->
+  <div class="grid">
+    <div class="card">
+      <h2>Option A — Double Chevron</h2>
+      <img src="logo-a.svg" height="62" alt="Logo A">
+      <hr>
+      <img src="icon-a.svg" height="52" alt="Icon A">
+    </div>
+
+    <div class="card">
+      <h2>Option C — Editorial Stack</h2>
+      <img src="logo-c.svg" height="62" alt="Logo C">
+      <hr>
+      <img src="icon-c.svg" height="52" alt="Icon C">
+    </div>
+
+    <div class="card">
+      <h2>Option 0 — Original (M + Diamond)</h2>
+      <img src="logo.svg" height="62" alt="Logo original">
+      <hr>
+      <div class="on-light" style="display:inline-flex">
+        <img src="logo-light.svg" height="48" alt="Logo original light">
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Option B — Code Tag</h2>
+      <img src="logo-b.svg" height="48" alt="Logo B">
+      <hr>
+      <img src="icon-b.svg" height="52" alt="Icon B">
+    </div>
+  </div>
+
+</body>
+</html>
